@@ -127,7 +127,7 @@
             display-name = "SYMBOLS";
             bindings = <
                 &kp EXCL   &kp AT    &kp HASH  &kp DLLR  &kp PRCNT                       &none      &kp UP     &kp RPAR   &kp LBKT   &kp RBKT
-                &kp CARET  &kp AMPS  &kp STAR  &kp BSLH  &kp PIPE                        &kp LEFT   &kp DOWN   &kp RIGHT  &kp DQT    &kp EQUAL
+                &kp CARET  &kp AMPS  &kp STAR  &kp BSLH  &kp PIPE                        &kp LEFT   &kp DOWN   &kp DOWN   &kp DQT    &kp EQUAL
                 &none      &none     &none     &none     &none      &mkp MB4  &mkp MB5   &kp GRAVE  &kp TILDE  &kp LBRC   &kp RBRC   &kp PLUS
                                      &trans     &trans    &trans    &trans    &trans     &kp DEL    &trans     &trans
             >;
