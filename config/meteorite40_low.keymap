@@ -6,8 +6,8 @@
 // OS設定を日本語キーボードのまま使用するための変換定義
 #define JP_DQUOTE       AT                // "
 #define JP_QUOTE        AMPERSAND         // '
-#define JP_BACKQUOTE    LEFT_BRACE        // `
-#define JP_AMPERSAND    CARET             // &
+#define JP_BQUOTE       LEFT_BRACE        // `
+#define JP_AMPS         CARET             // &
 #define JP_CARET        EQUAL             // ^
 #define JP_YEN          0x89              // ¥
      // DOLLAR                            // $
@@ -111,50 +111,50 @@
         win_default_layer {
             display-name = "BASE";
             bindings = <
-                &kp Q         &kp W         &kp E         &kp R         &kp T                                     &kp Y          &kp U        &kp I            &kp O      &kp P
-                &kp A         &kp S         &kp D         &kp F         &kp G                                     &kp H          &kp J        &kp K            &kp L      &kp ENTER
-                &mt LSHIFT Z  &mt LCTRL X   &mt LWIN C    &mt LALT V    &kp B        &mkp MB1        &mkp MB2     &kp N          &mt LALT M   &mt LWIN COMMA   &mt LCTRL DOT  &mt LSHIFT BSPC
-                                            &mt LWIN DEL  &mt LALT ESC  &lt 2 LANG2  &mt LCTRL TAB   &lt 1 SPACE  &lt 1 LANG1    &none    &mo 3
+                &kp Q         &kp W        &kp E         &kp R         &kp T                                    &kp Y        &kp U       &kp I           &kp O          &kp P
+                &kp A         &kp S        &kp D         &kp F         &kp G                                    &kp H        &kp J       &kp K           &kp L          &kp ENTER
+                &mt LSHIFT Z  &mt LCTRL X  &mt LWIN C    &mt LALT V    &kp B        &mkp MB1       &mkp MB2     &kp N        &mt LALT M  &mt LWIN COMMA  &mt LCTRL DOT  &kp BSPC
+                                           &mt LWIN DEL  &mt LALT ESC  &lt 2 LANG2  &mt LCTRL TAB  &lt 1 SPACE  &lt 1 LANG1  &none       &mo 3
             >;
         };
 
         layer_1 {
             display-name = "SYMBOLS";
             bindings = <
-                &kp EXCL   &kp AT    &kp HASH  &kp DLLR  &kp PRCNT                       &none      &none      &kp UP     &none       &none
-                &kp CARET  &kp AMPS  &kp STAR  &kp BSLH  &kp PIPE                        &kp MINUS  &kp LEFT   &kp DOWN   &kp RIGHT   &none
-                &none      &none     &none     &none     &none      &mkp MB4  &mkp MB5   &none      &none      &none      &none       &none
-                                     &trans     &trans    &trans    &trans    &trans     &none      &trans     &trans
-            >;
+                &kp QMARK  &kp EXCL      &none        &kp JP_COLON   &kp SEMI                            &none     &none     &kp UP    &none      &none
+                &kp JP_AT  &kp JP_AMPS   &none        &kp JP_DQUOTE  &kp JP_QUOTE                        &kp HOME  &kp LEFT  &kp DOWN  &kp RIGHT  &kp END
+                &kp UNDER  &kp JP_TILDE  &kp JP_PIPE  &kp JP_CARET   &kp  JP_BQUOTE  &mkp MB4  &mkp MB5  &none     &none     &none     &none      &none
+                                         &trans       &trans         &trans          &trans    &trans    &trans    &trans    &trans
+            >;     `^
         };
 
         layer_2 {
-            display-name = "NUM / ARROW";
+            display-name = "NUM / BRA";
             bindings = <
-                &kp DEL          &kp N7     &kp N8     &kp N9     &none                           &none      &kp JP_LBRACE    &kp JP_RBRACE    &none      &none
-                &none            &kp N4     &kp N5     &kp N6     &kp N0                          &none      &kp JP_LPAREN    &kp JP_LPAREN    &none      &none
-                &kp LG(LS(S))    &kp N1     &kp N2     &kp N3     &kp DOT   &mkp MB4   &mkp MB5   &none      &kp JP_LBRAKT    &kp JP_LBRAKT    &none      &none
-                                        &trans           &trans     &trans     &trans    &trans        &trans  &trans    &trans
+                &kp BSLH      &kp N7     &kp N8     &kp N9     &kp JP_EQUAL                        &kp JP_PLUS      &kp MINUS      &kp JP_LBRACE    &kp JP_RBRACE      &none 
+                &kp DOLLAR    &kp N4     &kp N5     &kp N6     &kp N0                              &kp JP_ASTERISK  &kp SLASH      &kp JP_LPAREN    &kp JP_RPAREN      &none
+                &kp HASH      &kp N1     &kp N2     &kp N3     &kp DOT       &mkp MB4   &mkp MB5   &none            &kp PERCENT    &kp JP_LBRAKT    &kp JP_RBRAKT      &none
+                                         &trans     &trans     &trans        &trans     &trans     &trans           &trans         &trans
             >;
         };
 
         layer_3 {
             display-name = "FUNCTION";
             bindings = <
-                &none   &kp F7   &kp F8   &kp F9   &none                   &none   &none   &none   &none   &kp C_MUTE
-                &none   &kp F4   &kp F5   &kp F6   &none                   &none   &none   &none   &none   &kp C_VOL_UP
-                &none   &kp F1   &kp F2   &kp F3   &none   &none   &none   &none   &none   &none   &none   &kp C_VOL_DN
-                                &mo 4  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                &none       &kp F7   &kp F8   &kp F9   &none                   &none   &none   &none   &none   &kp C_VOL_UP
+                &none       &kp F4   &kp F5   &kp F6   &none                   &none   &none   &none   &none   &kp C_VOL_DN
+                &&kp LS(Z)  &kp F1   &kp F2   &kp F3   &none   &none   &none   &none   &none   &kp LT  &kp GT  &kp C_MUTE
+                                 &mo 4    &trans   &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
 
         layer_4 {
             display-name = "SETTING";
             bindings = <
-                &bootloader  &none          &none          &none          &none                                     &none     &none    &none      &none     &none
-                &none        &bt BT_SEL 3   &bt BT_SEL 4   &none          &bt BT_CLR_ALL                            &none     &none    &none      &none     &none
-                &none        &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_CLR        &none     &none         &none     &none    &none      &none     &none
-                                            &trans         &trans         &trans            &trans    &trans        &trans    &trans   &trans
+                &bootloader  &none          &none          &none          &none                                 &none     &none    &none      &none     &none
+                &none        &bt BT_SEL 3   &bt BT_SEL 4   &none          &bt BT_CLR_ALL                        &none     &none    &none      &none     &none
+                &none        &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_CLR        &none     &none     &none     &none    &none      &none     &none
+                                            &trans         &trans         &trans            &trans    &trans    &trans    &trans   &trans
             >;
         };
     };
