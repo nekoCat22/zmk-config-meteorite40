@@ -9,7 +9,7 @@
 #define JP_BQUOTE       LEFT_BRACE        // `
 #define JP_AMPS         CARET             // &
 #define JP_CARET        EQUAL             // ^
-#define JP_YEN          0x89              // ¥
+#define JP_YEN          NON_US_BSLH       // ¥
      // DOLLAR                            // $
 #define JP_EQUAL        UNDER             // =
 #define JP_PLUS         COLON             // +
@@ -24,7 +24,7 @@
 #define JP_AT           LEFT_BRACKET      // @
 #define JP_COLON        SINGLE_QUOTE      // :
      // SEMI                              // ;
-#define JP_UNDERSCORE   LS(0x87)          // _
+#define JP_UNDER        LS(0x87)          // _
 #define JP_LBRAKT       RIGHT_BRACKET     // [
 #define JP_RBRAKT       BACKSLASH         // ]
 #define JP_LPAREN       ASTERISK          // (
@@ -121,9 +121,9 @@
         layer_1 {
             display-name = "SYMBOLS";
             bindings = <
-                &kp QMARK  &kp EXCL      &none        &kp JP_COLON   &kp SEMI                            &none     &none     &kp UP    &none      &none
-                &kp JP_AT  &kp JP_AMPS   &none        &kp JP_DQUOTE  &kp JP_QUOTE                        &kp HOME  &kp LEFT  &kp DOWN  &kp RIGHT  &kp END
-                &kp UNDER  &kp JP_TILDE  &kp JP_PIPE  &kp JP_CARET   &kp  JP_BQUOTE  &mkp MB4  &mkp MB5  &none     &none     &none     &none      &none
+                &kp QMARK     &kp EXCL      &none        &kp JP_COLON   &kp SEMI                            &none     &none     &kp UP    &none      &none
+                &kp JP_AT     &kp JP_AMPS   &none        &kp JP_DQUOTE  &kp JP_QUOTE                        &kp HOME  &kp LEFT  &kp DOWN  &kp RIGHT  &kp END
+                &kp JP_UNDER  &kp JP_TILDE  &kp JP_PIPE  &kp JP_CARET   &kp  JP_BQUOTE  &mkp MB4  &mkp MB5  &none     &none     &none     &none      &none
                                          &trans       &trans         &trans          &trans    &trans    &trans    &trans    &trans
             >;
         };
@@ -131,7 +131,7 @@
         layer_2 {
             display-name = "NUM / BRA";
             bindings = <
-                &kp BSLH      &kp N7     &kp N8     &kp N9     &kp JP_EQUAL                        &kp JP_PLUS      &kp MINUS      &kp JP_LBRACE    &kp JP_RBRACE      &none 
+                &kp JP_YEN    &kp N7     &kp N8     &kp N9     &kp JP_EQUAL                        &kp JP_PLUS      &kp MINUS      &kp JP_LBRACE    &kp JP_RBRACE      &none 
                 &kp DOLLAR    &kp N4     &kp N5     &kp N6     &kp N0                              &kp JP_ASTERISK  &kp SLASH      &kp JP_LPAREN    &kp JP_RPAREN      &none
                 &kp HASH      &kp N1     &kp N2     &kp N3     &kp DOT       &mkp MB4   &mkp MB5   &none            &kp PERCENT    &kp JP_LBRAKT    &kp JP_RBRAKT      &none
                                          &trans     &trans     &trans        &trans     &trans     &trans           &trans         &trans
@@ -154,8 +154,8 @@
                 &bootloader  &none          &none          &none          &none                                 &none     &none    &none      &none     &none
                 &none        &bt BT_SEL 3   &bt BT_SEL 4   &none          &bt BT_CLR_ALL                        &none     &none    &none      &none     &none
                 &none        &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_CLR        &none     &none     &none     &none    &none      &none     &none
-                                            &trans         &trans         &trans            &trans    &trans    &trans    &trans   &trans
-            >;
+            >;                              &trans         &trans         &trans            &trans    &trans    &trans    &trans   &trans
+            
         };
     };
 };
