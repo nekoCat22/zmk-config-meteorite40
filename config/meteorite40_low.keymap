@@ -74,13 +74,13 @@
 
         esc {
             bindings = <&kp ESCAPE>;
-            key-positions = <20 21>; /* Z + X */
+            key-positions = <0 1>; /* Q + W */
             layers = <0>;
         };
 
         tab {
             bindings = <&kp TAB>;
-            key-positions = <0 1>; /* Q + W */
+            key-positions = <20 21>; /* Z + X */
             layers = <0>;
         };
 
@@ -119,14 +119,14 @@
                 &kp Q         &kp W         &kp E         &kp R         &kp T                                     &kp Y          &kp U        &kp I            &kp O      &kp P
                 &kp A         &kp S         &kp D         &kp F         &kp G                                     &kp H          &kp J        &kp K            &kp L      &kp ENTER
                 &mt LSHIFT Z  &mt LCTRL X   &mt LWIN C    &mt LALT V    &kp B        &mkp MB1        &mkp MB2     &kp N          &mt LALT M   &mt LWIN COMMA   &mt LCTRL DOT  &mt LSHIFT BSPC
-                                            &mt LWIN DEL  &mt LALT ESC  &lt 2 LANG1  &mt LCTRL TAB   &lt 1 SPACE  &lt 1 LANG1    &none    &mo 3
+                                            &mt LWIN DEL  &mt LALT ESC  &lt 2 LANG2  &mt LCTRL TAB   &lt 1 SPACE  &lt 1 LANG1    &none    &mo 3
             >;
         };
 
         layer_1 {
             display-name = "SYMBOLS";
             bindings = <
-                &kp EXCL   &kp AT    &kp HASH  &kp DLLR  &kp PRCNT                       &none      &kp UP     &kp RPAR   &kp LBKT   &kp RBKT
+                &kp EXCL   &kp AT    &kp HASH  &kp DLLR  &kp PRCNT                       &none      &kp UP     &kp RIGHT  &kp LBKT   &kp RBKT
                 &kp CARET  &kp AMPS  &kp STAR  &kp BSLH  &kp PIPE                        &kp LEFT   &kp DOWN   &kp DOWN   &kp DQT    &kp EQUAL
                 &none      &none     &none     &none     &none      &mkp MB4  &mkp MB5   &kp GRAVE  &kp TILDE  &kp LBRC   &kp RBRC   &kp PLUS
                                      &trans     &trans    &trans    &trans    &trans     &kp DEL    &trans     &trans
