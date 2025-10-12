@@ -51,7 +51,17 @@
     quick-tap-ms = <150>; // change 200 to 150
 };
 
-/ { 
+/ {
+    behaviors {
+        lt_to: layer_tap_to {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <150>;
+            quick-tap-ms = <150>;
+            bindings = <&mo>, <&to>;
+        };
+    }; 
     combos {
         compatible = "zmk,combos";
 
@@ -121,10 +131,10 @@
         layer_1 {
             display-name = "SYMBOLS";
             bindings = <
-                &kp QMARK     &kp EXCL      &none        &kp JP_COLON   &kp SEMI                            &none     &kp HOME  &kp UP    &kp END    &none
-                &kp JP_AT     &kp JP_AMPS   &none        &kp JP_DQUOTE  &kp JP_QUOTE                        &none     &kp LEFT  &kp DOWN  &kp RIGHT  &none
-                &kp JP_UNDER  &kp JP_TILDE  &kp JP_PIPE  &kp JP_CARET   &kp JP_BQUOTE   &mkp MB4  &mkp MB5  &none     &none     &none     &none      &none
-                                            &trans       &trans         &trans          &trans    &trans    &trans    &trans    &trans
+                &kp QMARK     &kp EXCL      &none        &kp JP_COLON   &kp SEMI                            &kp JP_TILDE  &kp HOME  &kp UP    &kp END    &none
+                &kp JP_AT     &kp JP_AMPS   &none        &kp JP_DQUOTE  &kp JP_QUOTE                        &kp MINUS     &kp LEFT  &kp DOWN  &kp RIGHT  &none
+                &kp JP_UNDER  &kp JP_TILDE  &kp JP_PIPE  &kp JP_CARET   &kp JP_BQUOTE   &mkp MB4  &mkp MB5  &kp JP_UNDER  &none     &none     &none      &none
+                                            &trans       &trans         &trans          &trans    &trans    &trans        &trans    &trans
             >;
         };
 
@@ -161,10 +171,10 @@
         layer_5 {
             display-name = "MOUSE";
             bindings = <
-                &none    &none     &none     &none     &none                                 &none              &none    &none      &none     &none
-                &none    &none     &none     &none     &kp LS(LG(LEFT))                      &kp LS(LG(RIGHT))  &none    &none      &none     &none
-                &none    &none     &none     &none     &none             &mkp MB1  &mkp MB2  &none              &none    &none      &none     &none
-                          &trans   &trans    &trans    &lt 2 MB3         &trans    &trans    &to 0              &trans
+                &none    &none     &none     &none     &none                                  &none              &none    &none     &none     &none
+                &none    &none     &none     &none     &kp LC(LG(LEFT))                       &kp LC(LG(RIGHT))  &none    &none     &none     &none
+                &none    &none     &none     &none     &none             &mkp MB1   &mkp MB2  &none              &none    &none     &none     &none
+                                   &trans    &trans    &trans            &lt_to 2 0 &trans    &to 0              &to 0    &to 0
             >;
         };
     };
