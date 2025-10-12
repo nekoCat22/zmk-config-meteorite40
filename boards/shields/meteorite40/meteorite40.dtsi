@@ -125,7 +125,8 @@
         compatible = "zmk,input-listener";
         device = <&trackball>;
 
-        input-processors = <&sensor_rotation>;
+        input-processors = <&sensor_rotation>,
+                           <&zip_temp_layer 5 10000>;
 
         scroll {
             layers = <SCROLL_LAYER>;
