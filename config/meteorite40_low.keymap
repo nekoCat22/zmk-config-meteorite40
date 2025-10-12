@@ -161,10 +161,10 @@
         layer_5 {
             display-name = "MOUSE";
             bindings = <
-                &none    &none     &none     &none     &none                               &none              &none    &none      &none     &none
-                &none    &none     &none     &none     &kp LS(LG(LEFT))                    &kp LS(LG(RIGHT))  &none    &none      &none     &none
-                &none    &none     &none     &none     &none             &none     &none   &none              &none    &none      &none     &none
-                          &trans   &trans    &trans    &lt 2 MB3         &trans    &trans  &trans             &trans
+                &none    &none     &none     &none     &none                                 &none              &none    &none      &none     &none
+                &none    &none     &none     &none     &kp LS(LG(LEFT))                      &kp LS(LG(RIGHT))  &none    &none      &none     &none
+                &none    &none     &none     &none     &none             &mkp MB1  &mkp MB2  &none              &none    &none      &none     &none
+                          &trans   &trans    &trans    &lt 2 MB3         &trans    &trans    &to 0              &trans
             >;
         };
     };
