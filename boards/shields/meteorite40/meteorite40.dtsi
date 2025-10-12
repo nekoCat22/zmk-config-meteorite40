@@ -56,6 +56,10 @@
     };
 };
 
+&zip_temp_layer {
+    require-prior-idle-ms = <200>;
+};
+
 / {
     meteorite40_scan: kscan0 {
         compatible = "zmk,kscan-gpio-charlieplex";
