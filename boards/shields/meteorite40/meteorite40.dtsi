@@ -56,6 +56,22 @@
     };
 };
 
+&zip_temp_layer {
+    require-prior-idle-ms = <200>;
+
+    excluded-positions = <
+        4  // t
+        5  // y
+        14 // g
+        15 // h
+        24 // b
+        25 // mb1
+        26 // mb2
+        27 // n
+        34 // lt2
+    >;
+};
+
 / {
     meteorite40_scan: kscan0 {
         compatible = "zmk,kscan-gpio-charlieplex";
@@ -120,22 +136,6 @@
         invert-x = <INVERT_X>;
         invert-y = <INVERT_Y>;
     };
-
-&zip_temp_layer {
-    require-prior-idle-ms = <200>;
-
-    excluded-positions = <
-        4  // t
-        5  // y
-        14 // g
-        15 // h
-        24 // b
-        25 // mb1
-        26 // mb2
-        27 // n
-        34 // lt2
-    >;
-};
 
     trackball_listener {
         compatible = "zmk,input-listener";
